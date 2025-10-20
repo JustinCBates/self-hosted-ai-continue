@@ -1,0 +1,28 @@
+{
+  "name": "self-hosted-ai-continue",
+  "version": "1.0.0",
+  "description": "Self-hosted AI backend for Continue VS Code extension",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cd backend && python -m uvicorn app.main:app --reload --host 0.0.0.0 --port 8000",
+    "start": "cd backend && python -m uvicorn app.main:app --host 0.0.0.0 --port 8000",
+    "docker:build": "docker build -f docker/Dockerfile -t self-hosted-ai .",
+    "docker:run": "docker run -p 8000:8000 -v $(pwd)/models:/app/models self-hosted-ai",
+    "docker:compose": "docker-compose -f docker/docker-compose.yml up",
+    "test": "cd backend && python -m pytest tests/",
+    "lint": "cd backend && python -m flake8 app/",
+    "format": "cd backend && python -m black app/ && python -m isort app/"
+  },
+  "keywords": [
+    "ai",
+    "llm",
+    "continue",
+    "self-hosted",
+    "fastapi",
+    "python"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {}
+}

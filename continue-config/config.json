@@ -1,0 +1,110 @@
+{
+  "models": [
+    {
+      "title": "Self-Hosted AI",
+      "provider": "openai",
+      "model": "microsoft/DialoGPT-medium",
+      "apiKey": "your-api-key-here",
+      "apiBase": "http://localhost:8000/v1",
+      "requestOptions": {
+        "headers": {
+          "Authorization": "Bearer your-api-key-here"
+        }
+      }
+    }
+  ],
+  "tabAutocompleteModel": {
+    "title": "Self-Hosted Autocomplete",
+    "provider": "openai",
+    "model": "microsoft/DialoGPT-medium",
+    "apiKey": "your-api-key-here",
+    "apiBase": "http://localhost:8000/v1"
+  },
+  "embeddingsProvider": {
+    "provider": "transformers.js"
+  },
+  "reranker": {
+    "name": "transformers.js"
+  },
+  "contextProviders": [
+    {
+      "name": "code",
+      "params": {}
+    },
+    {
+      "name": "docs",
+      "params": {}
+    },
+    {
+      "name": "diff",
+      "params": {}
+    },
+    {
+      "name": "terminal",
+      "params": {}
+    },
+    {
+      "name": "problems",
+      "params": {}
+    },
+    {
+      "name": "folder",
+      "params": {}
+    },
+    {
+      "name": "codebase",
+      "params": {}
+    }
+  ],
+  "slashCommands": [
+    {
+      "name": "edit",
+      "description": "Edit selected code"
+    },
+    {
+      "name": "comment",
+      "description": "Write comments for the selected code"
+    },
+    {
+      "name": "share",
+      "description": "Export the current chat session to markdown"
+    },
+    {
+      "name": "cmd",
+      "description": "Generate a shell command"
+    },
+    {
+      "name": "commit",
+      "description": "Generate a git commit message"
+    }
+  ],
+  "customCommands": [
+    {
+      "name": "test",
+      "prompt": "Write a comprehensive test suite for the following code. Include unit tests, integration tests, and edge cases:\n\n{{{ input }}}\n\nMake sure to use appropriate testing frameworks and follow best practices.",
+      "description": "Generate comprehensive tests for selected code"
+    },
+    {
+      "name": "optimize",
+      "prompt": "Analyze the following code for performance optimizations and suggest improvements:\n\n{{{ input }}}\n\nFocus on algorithmic efficiency, memory usage, and code readability.",
+      "description": "Optimize selected code for performance"
+    },
+    {
+      "name": "security",
+      "prompt": "Perform a security analysis of the following code and identify potential vulnerabilities:\n\n{{{ input }}}\n\nProvide specific recommendations for fixing security issues.",
+      "description": "Analyze code for security vulnerabilities"
+    },
+    {
+      "name": "refactor",
+      "prompt": "Refactor the following code to improve its structure, readability, and maintainability:\n\n{{{ input }}}\n\nApply SOLID principles and modern best practices.",
+      "description": "Refactor code for better structure"
+    }
+  ],
+  "allowAnonymousTelemetry": false,
+  "docs": [
+    {
+      "title": "Project Documentation",
+      "startUrl": "http://localhost:8000/docs"
+    }
+  ]
+}
